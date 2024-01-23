@@ -33,6 +33,9 @@ git clone https://github.com/djneill/client-capture.git
 
 npm install
 npm install @clerk/nextjs
+npx shadcn-ui@latest init
+npx shadcn-ui@latest add
+npm install next-themes
 
 3. **.env**
 - NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=​
@@ -67,3 +70,4 @@ This project is licensed under the [MIT License](LICENSE). Feel free to use, mod
 If you encounter any issues or have questions, please check the [FAQs](docs/FAQ.md) or open an [issue](https://github.com/djneill/client-capture/issues). We appreciate your feedback and contributions!
 
 Happy coding with Client-Capture! 🚀
+# Client-Capture
