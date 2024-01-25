@@ -34,7 +34,7 @@ git clone https://github.com/djneill/client-capture.git
 npm install
 npm install @clerk/nextjs
 npx shadcn-ui@latest init
-npx shadcn-ui@latest add
+npx shadcn-ui@latest add (optional to add componenets)
 npm install next-themes
 
 3. **.env**
