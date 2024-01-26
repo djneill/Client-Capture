@@ -46,8 +46,9 @@ npm install next-themes
 - NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL=/
 
 4. **Configure Database:**
-- Set up the database connection in the configuration file.
+- Set up the PostgreSQL database connection in the .env file & prisma schema.
 - Run migrations to initialize the database schema.
+- npx prisma studio
 
 5. **Run the Application:**
 
