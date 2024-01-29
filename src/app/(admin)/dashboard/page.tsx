@@ -2,6 +2,10 @@ import Image from "next/image";
 
 export default function Page() {
   return (
-    <div>Hello</div>
+    <div className='container pt-4'>Hello</div>
   );
+}
+
+function CardStatsWrapper() {
+
 }
