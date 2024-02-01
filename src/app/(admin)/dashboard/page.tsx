@@ -8,6 +8,7 @@ import { LuView } from "react-icons/lu";
 import { FaWpforms } from "react-icons/fa";
 import { HiCursorClick } from "react-icons/hi";
 import { TbArrowBounce } from "react-icons/tb";
+import CreateFormBtn from "@/components/CreateFormBtn";
 
 export default function Dashboard() {
   return (
@@ -18,6 +19,7 @@ export default function Dashboard() {
       <Separator className='my-6' />
       <h2 className="text-4xl font-bold col-span-2">Your Forms</h2>
       <Separator className='my-6' />
+      <CreateFormBtn />
     </div>
   );
 }
