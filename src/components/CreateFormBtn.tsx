@@ -8,26 +8,26 @@ import { Button } from './ui/button'
 import { Input } from './ui/input'
 import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from './ui/form'
 import { zodResolver } from '@hookform/resolvers/zod'
-import * as z from 'zod'
 import { useForm } from 'react-hook-form'
 import { Textarea } from './ui/textarea'
 import { toast } from './ui/use-toast'
+import { formSchema, formSchemaType } from '../../schemas/form'
+import { CreateForm } from '../../actions/form'
 
-const formSchema = z.object({
-    name: z.string().min(2),
-    description: z.string().optional(),
-})
-
-type formSchemaType = z.infer<typeof formSchema>
 
 export default function CreateFormBtn() {
     const form = useForm<formSchemaType>({
         resolver: zodResolver(formSchema),
     })
 
-    function onSubmit(values: formSchemaType) {
+    async function onSubmit(values: formSchemaType) {
         try {
-
+            const formId = await CreateForm(values)
+            toast({
+                title: 'Success',
+                description: 'Form created successfully',
+            })
+            console.log('formId', formId)
         } catch (error) {
             toast({
                 title: 'Error',
@@ -40,7 +40,12 @@ export default function CreateFormBtn() {
     return (
         <Dialog>
             <DialogTrigger asChild>
-                <Button>Create New Client</Button>
+                <Button className='group border border-primary/20 h-[190px] items-center justify-center flex flex-col hover:border-primary hover:cursor-pointer border-dashed gap-4 bg-background'>
+                    <BsFileEarmarkPlus className='h-8 w-8 text-muted-foreground group-hover:text-secondary' />
+                    <p className='font-bold text-xl text-muted-foreground group-hover:text-secondary'>
+                        Add New Client
+                    </p>
+                </Button>
             </DialogTrigger>
             <DialogContent>
                 <DialogHeader>
@@ -66,7 +71,7 @@ export default function CreateFormBtn() {
                         />
                         <FormField
                             control={form.control}
-                            name='name'
+                            name='description'
                             render={({ field }) => (
                                 <FormItem>
                                     <FormLabel>Description</FormLabel>

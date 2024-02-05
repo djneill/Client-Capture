@@ -48,6 +48,7 @@ npm install next-themes
 4. **Configure Database:**
 - Set up the PostgreSQL database connection in the .env file & prisma schema.
 - Run migrations to initialize the database schema.
+- `npx prisma migrate dev`
 - npx prisma studio
 
 5. **Run the Application:**
